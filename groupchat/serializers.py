@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Group, Message
+from .models import User, Group, Message, Membership
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -11,19 +11,14 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'passwordDigest', 'groups')
+        fields = ('id', 'username', 'passwordDigest', 'groups')
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    members = serializers.HyperlinkedRelatedField(
-        view_name='user_detail',
-        many=True,
-        read_only=True
-    )
 
     class Meta:
         model = Group
-        fields = ('name', 'color', 'members', 'membersCount')
+        fields = ('id', 'name', 'color', 'membersCount')
 
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):
@@ -38,5 +33,20 @@ class MessageSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Message
-        fields = ('group', 'sender', 'groupName',
+        fields = ('id', 'group', 'sender', 'groupName',
                   'senderUsername', 'message')
+
+
+class MembershipSerializer(serializers.HyperlinkedModelSerializer):
+    group = serializers.HyperlinkedRelatedField(
+        view_name='group_detail',
+        read_only=True
+    )
+    user = serializers.HyperlinkedRelatedField(
+        view_name='user_detial',
+        read_only=True
+    )
+
+    class Meta:
+        model = Membership
+        fields = ('id', 'group', 'user')

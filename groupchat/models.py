@@ -13,8 +13,12 @@ class Group(models.Model):
 class User(models.Model):
     username = models.CharField(max_length=100)
     passwordDigest = models.CharField(max_length=100)
-    group = models.ForeignKey(
-        Group, on_delete=models.CASCADE, related_name='members')
+    groups = models.ManyToManyField(
+        Group,
+        through='Membership',
+        through_fields=('user', 'group'),
+        null=True
+    )
 
     def __str__(self):
         return self.username
@@ -31,3 +35,11 @@ class Message(models.Model):
 
     def __str__(self):
         return "message in " + self.groupName
+
+
+class Membership(models.Model):
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "user " + self.user.username + " in group " + self.group.name
