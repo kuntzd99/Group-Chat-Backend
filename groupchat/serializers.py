@@ -3,15 +3,15 @@ from .models import User, Group, Message, Membership
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    groups = serializers.HyperlinkedRelatedField(
-        view_name='group_detail',
-        many=True,
-        read_only=True
-    )
+    # groups = serializers.HyperlinkedRelatedField(
+    #     view_name='group_detail',
+    #     many=True,
+    #     read_only=True
+    # )
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'passwordDigest', 'groups')
+        fields = ('id', 'username', 'passwordDigest')
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
