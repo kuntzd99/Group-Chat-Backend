@@ -22,14 +22,14 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):
-    group = serializers.HyperlinkedRelatedField(
-        view_name='group_detail',
-        read_only=True
-    )
-    sender = serializers.HyperlinkedRelatedField(
-        view_name='user_detail',
-        read_only=True
-    )
+    # group = serializers.HyperlinkedRelatedField(
+    #     view_name='group_detail',
+    #     read_only=True
+    # )
+    # sender = serializers.HyperlinkedRelatedField(
+    #     view_name='user_detail',
+    #     read_only=True
+    # )
 
     class Meta:
         model = Message
@@ -38,14 +38,14 @@ class MessageSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class MembershipSerializer(serializers.HyperlinkedModelSerializer):
-    group = serializers.HyperlinkedRelatedField(
-        view_name='group_detail',
-        read_only=True
-    )
-    user = serializers.HyperlinkedRelatedField(
-        view_name='user_detial',
-        read_only=True
-    )
+    # group = serializers.HyperlinkedRelatedField(
+    #     view_name='group_detail',
+    #     read_only=True
+    # )
+    # user = serializers.HyperlinkedRelatedField(
+    #     view_name='user_detial',
+    #     read_only=True
+    # )
 
     class Meta:
         model = Membership

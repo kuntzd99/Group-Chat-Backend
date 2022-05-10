@@ -28,18 +28,16 @@ class Message(models.Model):
     message = models.TextField()
     groupName = models.CharField(max_length=100)
     senderUsername = models.CharField(max_length=100)
-    group = models.ForeignKey(
-        Group, on_delete=models.CASCADE, related_name='messages')
-    sender = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='messages')
+    group = models.IntegerField()
+    sender = models.IntegerField()
 
     def __str__(self):
         return "message in " + self.groupName
 
 
 class Membership(models.Model):
-    group = models.ForeignKey(Group, on_delete=models.CASCADE, null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    group = models.IntegerField()
+    user = models.IntegerField()
 
     def __str__(self):
-        return "user " + self.user.username + " in group " + self.group.name
+        return "user with ID " + self.user + " in group with ID " + self.group
