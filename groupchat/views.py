@@ -41,3 +41,8 @@ class MembershipList(generics.ListCreateAPIView):
 class ReactionList(generics.ListCreateAPIView):
     queryset = Reaction.objects.all()
     serializer_class = ReactionSerializer
+
+
+class ReactionDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Reaction.objects.all()
+    serializer_class = ReactionSerializer
