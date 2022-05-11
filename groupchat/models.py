@@ -41,3 +41,10 @@ class Membership(models.Model):
 
     def __str__(self):
         return "user with ID " + self.user + " in group with ID " + self.group
+
+
+class Reaction(models.Model):
+    type = models.CharField(max_length=100)
+    user = models.IntegerField()
+    username = models.CharField(max_length=100)
+    message = models.IntegerField()
