@@ -5,6 +5,7 @@ class Group(models.Model):
     name = models.CharField(max_length=100)
     color = models.CharField(max_length=100)
     membersCount = models.IntegerField()
+    creator = models.IntegerField()
 
     def __str__(self):
         return self.name

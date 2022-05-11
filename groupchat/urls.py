@@ -12,6 +12,8 @@ urlpatterns = [
     path('messages/', views.MessageList.as_view(), name='message_list'),
     path('messages/<int:pk>', views.MessageDetail.as_view(), name='message_detail'),
     path('memberships/', views.MembershipList.as_view(), name='membership_list'),
+    path('memberships/<int:pk>', views.MembershipDetail.as_view(),
+         name='membership_detail'),
     path('reactions/', views.ReactionList.as_view(), name='reaction_list'),
     path('reactions/<int:pk>', views.ReactionDetail.as_view(), name='reaction_detail')
 ]

@@ -38,6 +38,11 @@ class MembershipList(generics.ListCreateAPIView):
     serializer_class = MembershipSerializer
 
 
+class MembershipDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Membership.objects.all()
+    serializer_class = MembershipSerializer
+
+
 class ReactionList(generics.ListCreateAPIView):
     queryset = Reaction.objects.all()
     serializer_class = ReactionSerializer

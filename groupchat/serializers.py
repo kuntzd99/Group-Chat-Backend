@@ -3,11 +3,6 @@ from .models import User, Group, Message, Membership, Reaction
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    # groups = serializers.HyperlinkedRelatedField(
-    #     view_name='group_detail',
-    #     many=True,
-    #     read_only=True
-    # )
 
     class Meta:
         model = User
@@ -18,18 +13,10 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Group
-        fields = ('id', 'name', 'color', 'membersCount')
+        fields = ('id', 'name', 'color', 'membersCount', 'creator')
 
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):
-    # group = serializers.HyperlinkedRelatedField(
-    #     view_name='group_detail',
-    #     read_only=True
-    # )
-    # sender = serializers.HyperlinkedRelatedField(
-    #     view_name='user_detail',
-    #     read_only=True
-    # )
 
     class Meta:
         model = Message
@@ -38,14 +25,6 @@ class MessageSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class MembershipSerializer(serializers.HyperlinkedModelSerializer):
-    # group = serializers.HyperlinkedRelatedField(
-    #     view_name='group_detail',
-    #     read_only=True
-    # )
-    # user = serializers.HyperlinkedRelatedField(
-    #     view_name='user_detial',
-    #     read_only=True
-    # )
 
     class Meta:
         model = Membership
@@ -53,6 +32,7 @@ class MembershipSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ReactionSerializer(serializers.HyperlinkedModelSerializer):
+
     class Meta:
         model = Reaction
         fields = ('id', 'type', 'user', 'username', 'message')
