@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Group, Message, Membership
+from .models import User, Group, Message, Membership, Reaction
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -50,3 +50,9 @@ class MembershipSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Membership
         fields = ('id', 'group', 'user')
+
+
+class ReactionSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Reaction
+        fields = ('id', 'type', 'user', 'username', 'message')

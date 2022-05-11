@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .serializers import UserSerializer, GroupSerializer, MessageSerializer, MembershipSerializer
-from .models import User, Group, Message, Membership
+from .serializers import UserSerializer, GroupSerializer, MessageSerializer, MembershipSerializer, ReactionSerializer
+from .models import User, Group, Message, Membership, Reaction
 
 
 class UserList(generics.ListCreateAPIView):
@@ -38,6 +38,6 @@ class MembershipList(generics.ListCreateAPIView):
     serializer_class = MembershipSerializer
 
 
-class MembershipDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Membership.objects.all()
-    serializer_class = MembershipSerializer
+class ReactionList(generics.ListCreateAPIView):
+    queryset = Reaction.objects.all()
+    serializer_class = ReactionSerializer
