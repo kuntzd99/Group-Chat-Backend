@@ -25,7 +25,7 @@ class Message(models.Model):
     senderUsername = models.CharField(max_length=100)
     group = models.IntegerField()
     sender = models.IntegerField()
-    # time = models.IntegerField()
+    time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return "message in " + self.groupName
@@ -51,6 +51,6 @@ class Post(models.Model):
     caption = models.TextField()
 
 
-class PostMessages(models.Model):
+class PostMessage(models.Model):
     post = models.IntegerField()
     message = models.IntegerField()

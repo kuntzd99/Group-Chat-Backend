@@ -15,5 +15,11 @@ urlpatterns = [
     path('memberships/<int:pk>', views.MembershipDetail.as_view(),
          name='membership_detail'),
     path('reactions/', views.ReactionList.as_view(), name='reaction_list'),
-    path('reactions/<int:pk>', views.ReactionDetail.as_view(), name='reaction_detail')
+    path('reactions/<int:pk>', views.ReactionDetail.as_view(),
+         name='reaction_detail'),
+    path('posts/', views.PostList.as_view(), name='post_list'),
+    path('posts/<int:pk>', views.PostDetail.as_view(), name='post_detail'),
+    path('postmessages/', views.PostMessageList.as_view(), name='postmessage_list'),
+    path('postmessages/<int:pk>', views.PostMessageDetail.as_view(),
+         name='postmessage_detail')
 ]
