@@ -60,6 +60,6 @@ class PostMessage(models.Model):
 
 
 class Invitation(models.Model):
-    user: models.IntegerField()
-    group: models.IntegerField()
-    sender: models.IntegerField()
+    user = models.IntegerField()
+    group = models.IntegerField()
+    sender = models.IntegerField()
