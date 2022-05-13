@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Group, Message, Membership, Reaction, Post, PostMessage
+from .models import User, Group, Message, Membership, Reaction, Post, PostMessage, Invitation
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -50,3 +50,10 @@ class PostMessageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = PostMessage
         fields = ('id', 'post', 'message')
+
+
+class InvitationSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = Invitation
+        fields = ('id', 'user', 'group', 'sender')

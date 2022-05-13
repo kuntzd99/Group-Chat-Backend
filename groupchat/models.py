@@ -57,3 +57,9 @@ class Post(models.Model):
 class PostMessage(models.Model):
     post = models.IntegerField()
     message = models.IntegerField()
+
+
+class Invitation(models.Model):
+    user: models.IntegerField()
+    group: models.IntegerField()
+    sender: models.IntegerField()

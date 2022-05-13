@@ -21,5 +21,8 @@ urlpatterns = [
     path('posts/<int:pk>', views.PostDetail.as_view(), name='post_detail'),
     path('postmessages/', views.PostMessageList.as_view(), name='postmessage_list'),
     path('postmessages/<int:pk>', views.PostMessageDetail.as_view(),
-         name='postmessage_detail')
+         name='postmessage_detail'),
+    path('invitations/', views.InvitationList().as_view(), name='invitation_list'),
+    path('invitations/<int:pk>', views.InvitationDetail.as_view(),
+         name='invitation_detail')
 ]
