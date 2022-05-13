@@ -6,14 +6,14 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'passwordDigest')
+        fields = ('id', 'username', 'passwordDigest', 'image', 'bio')
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Group
-        fields = ('id', 'name', 'color', 'membersCount', 'creator')
+        fields = ('id', 'name', 'color', 'membersCount', 'creator', 'image')
 
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):

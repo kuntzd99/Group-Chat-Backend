@@ -6,6 +6,7 @@ class Group(models.Model):
     color = models.CharField(max_length=100)
     membersCount = models.IntegerField()
     creator = models.IntegerField()
+    image = models.TextField()
 
     def __str__(self):
         return self.name
@@ -14,6 +15,8 @@ class Group(models.Model):
 class User(models.Model):
     username = models.CharField(max_length=100)
     passwordDigest = models.CharField(max_length=100)
+    image = models.TextField()
+    bio = models.TextField(blank=True)
 
     def __str__(self):
         return self.username
