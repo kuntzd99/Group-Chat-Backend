@@ -51,7 +51,8 @@ class Reaction(models.Model):
 
 class Post(models.Model):
     user = models.IntegerField()
-    caption = models.TextField()
+    caption = models.TextField(blank=True)
+    groupColor = models.CharField(max_length=100)
 
 
 class PostMessage(models.Model):
@@ -63,3 +64,11 @@ class Invitation(models.Model):
     user = models.IntegerField()
     group = models.IntegerField()
     sender = models.IntegerField()
+
+
+class Comment(models.Model):
+    post = models.IntegerField()
+    comment = models.TextField()
+    user = models.IntegerField()
+    username = models.CharField(max_length=100)
+    time = models.DateTimeField(auto_now=True)
