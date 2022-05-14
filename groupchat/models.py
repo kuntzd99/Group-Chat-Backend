@@ -72,3 +72,10 @@ class Comment(models.Model):
     user = models.IntegerField()
     username = models.CharField(max_length=100)
     time = models.DateTimeField(auto_now=True)
+
+
+class CommentReaction(models.Model):
+    type = models.CharField(max_length=100)
+    user = models.IntegerField()
+    username = models.CharField(max_length=100)
+    comment = models.IntegerField()

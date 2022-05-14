@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .serializers import UserSerializer, GroupSerializer, MessageSerializer, MembershipSerializer, ReactionSerializer, PostSerializer, PostMessageSerializer, InvitationSerializer
-from .models import User, Group, Message, Membership, Reaction, Post, PostMessage, Invitation
+from .serializers import UserSerializer, GroupSerializer, MessageSerializer, MembershipSerializer, ReactionSerializer, PostSerializer, PostMessageSerializer, InvitationSerializer, CommentSerializer, CommentReactionSerializer
+from .models import User, Group, Message, Membership, Reaction, Post, PostMessage, Invitation, Comment, CommentReaction
 
 
 class UserList(generics.ListCreateAPIView):
@@ -81,3 +81,23 @@ class InvitationList(generics.ListCreateAPIView):
 class InvitationDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Invitation.objects.all()
     serializer_class = InvitationSerializer
+
+
+class CommentList(generics.ListCreateAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+
+class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+
+class CommentReactionList(generics.ListCreateAPIView):
+    queryset = CommentReaction.objects.all()
+    serializer_class = CommentReactionSerializer
+
+
+class CommentReactionDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = CommentReaction.objects.all()
+    serializer_class = CommentReactionSerializer
