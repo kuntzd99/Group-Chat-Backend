@@ -53,6 +53,9 @@ class Post(models.Model):
     user = models.IntegerField()
     caption = models.TextField(blank=True)
     groupColor = models.CharField(max_length=100)
+    likes = models.IntegerField()
+    laughs = models.IntegerField()
+    comments = models.IntegerField()
 
 
 class PostMessage(models.Model):
@@ -79,3 +82,10 @@ class CommentReaction(models.Model):
     user = models.IntegerField()
     username = models.CharField(max_length=100)
     comment = models.IntegerField()
+
+
+class PostReaction(models.Model):
+    type = models.CharField(max_length=100)
+    user = models.IntegerField()
+    username = models.CharField(max_length=100)
+    post = models.IntegerField()

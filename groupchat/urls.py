@@ -30,5 +30,9 @@ urlpatterns = [
     path('commentreactions/', views.CommentReactionList().as_view(),
          name='commentreaction_list'),
     path('commentreactions/<int:pk>',
-         views.CommentReactionDetail.as_view(), name='commentreaction_detail')
+         views.CommentReactionDetail.as_view(), name='commentreaction_detail'),
+    path('postreactions/', views.PostReactionList().as_view(),
+         name='postreaction_list'),
+    path('postreactions/<int:pk>',
+         views.PostReactionDetail.as_view(), name='postreaction_detail')
 ]
