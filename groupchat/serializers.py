@@ -21,7 +21,8 @@ class MessageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Message
         fields = ('id', 'group', 'sender', 'groupName',
-                  'senderUsername', 'message', 'time')
+                  'senderUsername', 'message', 'time', 'likes',
+                  'dislikes', 'laughs')
 
 
 class MembershipSerializer(serializers.HyperlinkedModelSerializer):
@@ -42,7 +43,8 @@ class CommentReactionSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = CommentReaction
-        fields = ('id', 'type', 'user', 'username', 'comment')
+        fields = ('id', 'type', 'user', 'username',
+                  'comment')
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
@@ -50,7 +52,7 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Post
         fields = ('id', 'user', 'caption', 'groupColor',
-                  'likes', 'laughs', 'comments')
+                  'likes', 'laughs', 'comments', 'time')
 
 
 class PostMessageSerializer(serializers.HyperlinkedModelSerializer):
@@ -72,7 +74,7 @@ class CommentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Comment
         fields = ('id', 'post', 'user', 'comment', 'username',
-                  'time')
+                  'time', 'likes', 'dislikes', 'laughs')
 
 
 class PostReactionSerializer(serializers.HyperlinkedModelSerializer):
