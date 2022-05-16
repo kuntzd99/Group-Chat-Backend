@@ -28,7 +28,7 @@ class Message(models.Model):
     senderUsername = models.CharField(max_length=100)
     group = models.IntegerField()
     sender = models.IntegerField()
-    time = models.DateTimeField(auto_now=True)
+    time = models.CharField(max_length=100)
     likes = models.IntegerField()
     dislikes = models.IntegerField()
     laughs = models.IntegerField()
@@ -59,7 +59,7 @@ class Post(models.Model):
     likes = models.IntegerField()
     laughs = models.IntegerField()
     comments = models.IntegerField()
-    time = models.DateTimeField(auto_now=True)
+    time = models.CharField(max_length=100)
 
 
 class PostMessage(models.Model):
@@ -78,7 +78,7 @@ class Comment(models.Model):
     comment = models.TextField()
     user = models.IntegerField()
     username = models.CharField(max_length=100)
-    time = models.DateTimeField(auto_now=True)
+    time = models.CharField(max_length=100)
     likes = models.IntegerField()
     dislikes = models.IntegerField()
     laughs = models.IntegerField()
