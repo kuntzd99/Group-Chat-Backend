@@ -29,8 +29,8 @@ This website is created using:
 
 1. Django (using Python)
 2. Vue
-3. Node.
-4. Flexbox / Grid
+3. Node.js
+4. CSS
 
 ---
 
