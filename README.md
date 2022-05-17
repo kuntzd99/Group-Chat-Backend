@@ -6,7 +6,7 @@
 
 [Github](https://github.com/kuntzd99) | [LinkedIn](https://www.linkedin.com/in/daniel-kuntz-09a036207/)
 
-[Front-End-Repository](https://github.com/kuntzd99/Group-Chat-Frontend)
+[Frontend Repository](https://github.com/kuntzd99/Group-Chat-Frontend)
 
 ---
 
