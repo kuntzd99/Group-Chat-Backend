@@ -6,8 +6,6 @@
 
 [Github](https://github.com/kuntzd99) | [LinkedIn](https://www.linkedin.com/in/daniel-kuntz-09a036207/)
 
-[Trello](https://trello.com/b/YUUdgbdd/group-chat)
-
 [Frontend Repo](https://github.com/kuntzd99/Group-Chat-Frontend)
 
 ---
@@ -15,11 +13,14 @@
 Website :
 [Group-Chat](https://immense-garden-67767.herokuapp.com/)
 
+[Front-End-Repository](https://github.com/kuntzd99/Space-Pilgrims-Frontend)
+
 ---
 
 ### **_Description_**
 
-Welcome to Group-Chat! Start a group and chat with as many users as you like! Something funny or memorable happen in one of your groups? Make sure to post it!
+Group-Chat is an application in which users can message each other via user-created groups. In order for
+someone to be added to a group, they must be invited by someone in the group.
 
 ---
 
@@ -27,16 +28,18 @@ Welcome to Group-Chat! Start a group and chat with as many users as you like! So
 
 This website is created using:
 
-1. Django (using Python)
-2. Vue
-3. Node.js
+1. Django
+2. Python
+3. Vue.js
 4. CSS
 
 ---
 
 ### **_Getting Started_**
 
-Go to the website and register for an account. From there, you can create a group in which you can send messages to other users.
+Go to the website and register for an account. From there, you can create a group, invite other members, and start sending messages.
+
+---
 
 ### **_Credits_**
 
